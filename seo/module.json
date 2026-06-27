@@ -1,0 +1,22 @@
+{
+    "name": "seo",
+    "vendor": "inox",
+    "version": "1.0.0",
+    "description": "SEO tools — meta tags, sitemaps, Open Graph, analytics",
+    "requires": {
+        "inox": ">=0.1.0",
+        "php": ">=8.3"
+    },
+    "permissions": {
+        "database": ["read:posts", "write:post_meta"],
+        "events": ["content.saved", "content.deleted"],
+        "routes": ["/sitemap.xml", "/robots.txt"],
+        "storage": [],
+        "hooks": ["head.meta", "admin.sidebar", "content.saving"]
+    },
+    "provider": "Inox\\Seo\\Providers\\ModuleServiceProvider",
+    "download_url": "https://github.com/maicolrme/inoxcms-modules/archive/refs/tags/seo/v1.0.0.zip",
+    "authors": [
+        { "name": "Inox Team", "email": "team@inox.dev" }
+    ]
+}

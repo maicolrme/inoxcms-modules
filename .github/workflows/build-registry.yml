@@ -1,0 +1,72 @@
+name: Build Registry
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate registry.json
+        run: |
+          echo '{' > registry.json
+          echo '  "api_url": "https://api.github.com/repos/maicolrme/inoxcms-modules",' >> registry.json
+          echo '  "homepage": "https://github.com/maicolrme/inoxcms-modules",' >> registry.json
+          echo '  "packages": {' >> registry.json
+
+          first=true
+          for dir in */; do
+            dir=${dir%/}
+            [ "$dir" = ".github" ] && continue
+            [ "$dir" = ".git" ] && continue
+            manifest="$dir/module.json"
+            [ ! -f "$manifest" ] && continue
+
+            name=$(jq -r '.name // ""' "$manifest")
+            vendor=$(jq -r '.vendor // "inox"' "$manifest")
+            version=$(jq -r '.version // "0.1.0"' "$manifest")
+            description=$(jq -r '.description // ""' "$manifest")
+            download_url="https://github.com/maicolrme/inoxcms-modules/archive/refs/tags/$name/v$version.zip"
+            requires=$(jq -c '.requires // {}' "$manifest")
+
+            [ -z "$name" ] && continue
+
+            $first || echo ',' >> registry.json
+            first=false
+
+            cat >> registry.json <<PKG
+            "$name": {
+              "name": "$name",
+              "vendor": "$vendor",
+              "description": "$description",
+              "latest_version": "$version",
+              "versions": {
+                "$version": {
+                  "download_url": "$download_url",
+                  "requires": $requires,
+                  "published_at": "$(date -u +%Y-%m-%d)"
+                }
+              },
+              "downloads": 0,
+              "rating": 0
+            }
+PKG
+          done
+
+          echo '  }' >> registry.json
+          echo '}' >> registry.json
+
+      - name: Commit updated registry
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add registry.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update registry.json [skip ci]"
+          git push

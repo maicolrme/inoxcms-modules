@@ -1,0 +1,111 @@
+{
+  "api_url": "https://api.github.com/repos/maicolrme/inoxcms-modules",
+  "homepage": "https://github.com/maicolrme/inoxcms-modules",
+  "packages": {
+    "seo": {
+      "name": "seo",
+      "vendor": "inox",
+      "description": "SEO tools — meta tags, sitemaps, Open Graph, and analytics integration.",
+      "latest_version": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "download_url": "https://github.com/maicolrme/inoxcms-modules/archive/refs/tags/seo/v1.0.0.zip",
+          "requires": { "php": ">=8.3", "inox": ">=0.1.0" },
+          "published_at": "2026-06-27"
+        }
+      },
+      "downloads": 0,
+      "rating": 0
+    },
+    "storage": {
+      "name": "storage",
+      "vendor": "inox",
+      "description": "File storage manager — local, S3, and R2 disks with drag-drop upload, image editing, and API.",
+      "latest_version": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "download_url": "https://github.com/maicolrme/inoxcms-modules/archive/refs/tags/storage/v1.0.0.zip",
+          "requires": { "php": ">=8.3", "inox": ">=0.1.0" },
+          "published_at": "2026-06-27"
+        }
+      },
+      "downloads": 0,
+      "rating": 0
+    },
+    "api": {
+      "name": "api",
+      "vendor": "inox",
+      "description": "RESTful API management — token authentication and interactive API documentation.",
+      "latest_version": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "download_url": "https://github.com/maicolrme/inoxcms-modules/archive/refs/tags/api/v1.0.0.zip",
+          "requires": { "php": ">=8.3", "inox": ">=0.1.0" },
+          "published_at": "2026-06-27"
+        }
+      },
+      "downloads": 0,
+      "rating": 0
+    },
+    "schema-studio": {
+      "name": "schema-studio",
+      "vendor": "inox",
+      "description": "Visual Schema Builder — design data models, generate migrations, models, policies, API, and admin CRUD automatically.",
+      "latest_version": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "download_url": "https://github.com/maicolrme/inoxcms-modules/archive/refs/tags/schema-studio/v1.0.0.zip",
+          "requires": { "php": ">=8.3", "inox": ">=0.1.0" },
+          "published_at": "2026-06-27"
+        }
+      },
+      "downloads": 0,
+      "rating": 0
+    },
+    "ai": {
+      "name": "ai",
+      "vendor": "inox",
+      "description": "AI content assistant — auto-generate posts, excerpts, and SEO metadata using LLMs.",
+      "latest_version": "0.5.0",
+      "versions": {
+        "0.5.0": {
+          "download_url": "",
+          "requires": { "php": ">=8.3", "inox": ">=0.2.0" },
+          "published_at": "2026-06-27"
+        }
+      },
+      "downloads": 0,
+      "rating": 0
+    },
+    "ecommerce": {
+      "name": "ecommerce",
+      "vendor": "inox",
+      "description": "E-commerce module — products, cart, checkout, orders, and payment gateway integration.",
+      "latest_version": "0.1.0",
+      "versions": {
+        "0.1.0": {
+          "download_url": "",
+          "requires": { "php": ">=8.3", "inox": ">=0.3.0" },
+          "published_at": "2026-06-27"
+        }
+      },
+      "downloads": 0,
+      "rating": 0
+    },
+    "forms": {
+      "name": "forms",
+      "vendor": "inox",
+      "description": "Drag & drop form builder with submissions, email notifications, and webhook support.",
+      "latest_version": "0.1.0",
+      "versions": {
+        "0.1.0": {
+          "download_url": "",
+          "requires": { "php": ">=8.3", "inox": ">=0.2.0" },
+          "published_at": "2026-06-27"
+        }
+      },
+      "downloads": 0,
+      "rating": 0
+    }
+  }
+}

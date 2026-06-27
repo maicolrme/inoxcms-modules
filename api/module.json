@@ -1,0 +1,8 @@
+{
+    "name": "api",
+    "vendor": "inox",
+    "description": "RESTful API — token management and documentation",
+    "version": "1.0.0",
+    "download_url": "https://github.com/maicolrme/inoxcms-modules/archive/refs/tags/api/v1.0.0.zip",
+    "provider": "Inox\\Api\\Providers\\ModuleServiceProvider"
+}

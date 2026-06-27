@@ -1,0 +1,9 @@
+{
+    "name": "schema-studio",
+    "vendor": "inox",
+    "version": "1.0.0",
+    "description": "Visual Schema Builder — design data models, generate migrations, models, policies, API, and admin CRUD automatically.",
+    "provider": "Inox\\SchemaStudio\\Providers\\ModuleServiceProvider",
+    "required_modules": [],
+    "download_url": "https://github.com/maicolrme/inoxcms-modules/archive/refs/tags/schema-studio/v1.0.0.zip"
+}
