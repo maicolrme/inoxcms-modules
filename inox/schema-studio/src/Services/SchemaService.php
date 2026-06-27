@@ -12,7 +12,7 @@ class SchemaService
 
     public function __construct(FieldTypeRegistry $fields)
     {
-        $this->path = config('schema-studio.schema_path', base_path('schema'));
+        $this->path = config('schema-studio.schema_path', cms_path('schema'));
         $this->fields = $fields;
 
         if (!File::isDirectory($this->path)) {

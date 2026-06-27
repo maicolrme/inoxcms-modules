@@ -22,7 +22,7 @@ class ApiSettings extends Component
         $this->authType = config('inox.api.auth_type', 'sanctum');
         $this->rateLimit = (string) config('inox.api.rate_limit', 60);
         $this->logEnabled = config('inox.api.log_enabled', true);
-        $this->envWritable = File::isWritable(base_path('.env'));
+        $this->envWritable = File::isWritable(cms_path('.env'));
     }
 
     public function save(): void
@@ -47,7 +47,7 @@ class ApiSettings extends Component
 
     protected function writeEnv(string $key, string $value): void
     {
-        $envPath = base_path('.env');
+        $envPath = cms_path('.env');
         if (!File::exists($envPath)) return;
 
         $env = File::get($envPath);

@@ -49,7 +49,7 @@ class MediaSettings extends Component
         $this->r2_bucket = env('STORAGE_R2_BUCKET', '');
         $this->r2_url = env('STORAGE_R2_URL', '');
         $this->r2_endpoint = env('STORAGE_R2_ENDPOINT', '');
-        $this->envWritable = File::isWritable(base_path('.env'));
+        $this->envWritable = File::isWritable(cms_path('.env'));
     }
 
     public function save(): void
@@ -77,7 +77,7 @@ class MediaSettings extends Component
             }
         }
 
-        $env = base_path('.env');
+        $env = cms_path('.env');
         if (File::exists($env)) {
             $content = File::get($env);
             if (preg_match('/^STORAGE_DISK=/m', $content)) {
@@ -95,7 +95,7 @@ class MediaSettings extends Component
 
     protected function writeEnv(string $key, string $value): void
     {
-        $envPath = base_path('.env');
+        $envPath = cms_path('.env');
         if (! File::exists($envPath)) return;
 
         $env = File::get($envPath);

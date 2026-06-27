@@ -7,7 +7,7 @@ return [
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/public/storage'),
-            'url' => rtrim(env('APP_URL', 'http://localhost'), '/') . '/storage/files',
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/') . '/storage/media',
             'visibility' => 'public',
         ],
 

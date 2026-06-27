@@ -41,7 +41,7 @@ class MediaManager extends Component
         $originalName = $file->getClientOriginalName();
         $name = pathinfo($originalName, PATHINFO_FILENAME);
         $extension = $file->getClientOriginalExtension();
-        $path = $file->store('/' . date('Y/m'), 'storage');
+        $path = $file->store('/' . date('Y/m'), 'media');
 
         $dimensions = null;
         if (str_starts_with($file->getMimeType(), 'image/')) {
@@ -58,7 +58,7 @@ class MediaManager extends Component
             'name' => $name,
             'original_name' => $originalName,
             'path' => $path,
-            'disk' => 'storage',
+            'disk' => 'media',
             'mime_type' => $file->getMimeType(),
             'size' => $file->getSize(),
         ], $dimensions ?? []));

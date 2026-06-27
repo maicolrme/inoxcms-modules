@@ -14,14 +14,14 @@ Route::middleware('auth:sanctum')->prefix('api')->name('api.')->group(function (
         ]);
 
         $file = $request->file('file');
-        $path = $file->store('/' . date('Y/m'), 'storage');
+        $path = $file->store('/' . date('Y/m'), 'media');
 
         $media = Media::create([
             'user_id' => $request->user()->id,
             'name' => pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME),
             'original_name' => $file->getClientOriginalName(),
             'path' => $path,
-            'disk' => 'storage',
+            'disk' => 'media',
             'mime_type' => $file->getMimeType(),
             'size' => $file->getSize(),
         ]);
